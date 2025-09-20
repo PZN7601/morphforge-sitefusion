@@ -1,0 +1,12 @@
+<!doctype html><html><body><script>
+/* 16×16, 48×48, 128×128 grey icon generator */
+const sizes = [16,48,128];
+sizes.forEach(s=>{
+  const c=document.createElement('canvas'),x=c.getContext('2d');
+  c.width=c.height=s;x.fillStyle='#555';x.fillRect(0,0,s,s);
+  x.fillStyle='#fff';x.font=`bold ${s/2}px sans-serif`;
+  x.textAlign='center';x.textBaseline='middle';x.fillText('M',s/2,s/2);
+  const a=document.createElement('a');a.download=`icon${s}.png`;
+  a.href=c.toDataURL('image/png');a.click();
+});
+</script></body></html>
